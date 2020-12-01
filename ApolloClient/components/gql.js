@@ -12,34 +12,17 @@ const GQLListAll = gql`
 `;
 
 // 新增人员信息
-// const GQLInert = gql`
-// {
-//   mutation addName($id:Int,$name:String,$price:Int)
-//   addName(
-//     id:$id,
-//     name:$name,
-//     price:$price
-//   ){
-//     id
-//     name
-//     price
-  
-//   }
-// }
-// `
-
 const GQLInert = gql`
-  mutation addName($id:Int,$name:String,$price:Int){
-  addName(
-    id:$id,
-    name:$name,
-    price:$price
-  ){
-    id
-    name
-    price
-  
-  }
+  mutation addName($id:Int, $name:String, $price:Int){
+    addName(
+      id: $id,
+      name: $name,
+      price: $price
+    ){
+      id
+      name
+      price
+    }
   }
 `
 
