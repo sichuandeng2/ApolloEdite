@@ -13,12 +13,8 @@ const GQLListAll = gql`
 
 // 新增人员信息
 const GQLInert = gql`
-  mutation addName($id:Int, $name:String, $price:Int){
-    addName(
-      id: $id,
-      name: $name,
-      price: $price
-    ){
+  mutation addNameMutation($input:NameInput){
+    addName(input:$input){
       id
       name
       price

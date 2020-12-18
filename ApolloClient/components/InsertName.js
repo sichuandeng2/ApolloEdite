@@ -7,22 +7,33 @@ function InsertName(){
   let inputId
   let inputName
   let inputPrice
-  const [addName,{data}] = useMutation(GQLInert);
+  const [addName] = useMutation(GQLInert);
 
   function submit(values,actions){
  
     setTimeout(() => {
-      let v= JSON.stringify(values)
+      // let v= JSON.stringify(values)
       // let v= values
-      console.log(v)
-
-      addName({v})
+      // console.log(v)
+      // console.log(typeof values.id)
+      // console.log(typeof values.name)
+      // console.log(typeof values.price)
+      // addName(v)
+      addName({
+        variables:{
+          id:values.id,
+          name:values.name,
+          price:values.price
+        }
+      })
       actions.setSubmitting(false)
     }, 500);
   }
   return (
     <div>
-      <Formik initialValues={{id:'',name:"",price:''}} onSubmit ={(values,actions)=>submit(values,actions)}> 
+      <Formik 
+      initialValues={{id:'',name:"",price:''}} 
+      onSubmit ={(values,actions)=>submit(values,actions)}> 
         {
           props => (
             <Form>
@@ -36,7 +47,6 @@ function InsertName(){
             </Form>
           )
         }
-      
       </Formik>
 
       

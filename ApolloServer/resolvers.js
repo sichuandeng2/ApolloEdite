@@ -18,8 +18,8 @@ let getList = async function(){
         }
      
     })
-    .catch((err)=>{console.log('err');throw err})
-    .finally(()=>knex.destroy())
+    // .catch((err)=>{console.log('err');throw err})
+    // .finally(()=>knex.destroy())
     return names
 }
 
@@ -48,9 +48,10 @@ module.exports = {
     },
 
     Mutation:{
-        addName:(parent,paras)=>{
-            console.log("接受参数"+parent,paras)
-            addList(paras)
+        addName:(parent,args)=>{
+            // console.log("接受参数"+parent,paras,id)
+            console.log(args)
+            // addList(paras)
             // names.push({id,name,price})
             // console.log(names)
             return 
