@@ -11,8 +11,8 @@ function HomePage(){
       <ThemeProvider theme={theme}>
         <CSSReset/>
         <ApolloProvider client= {ClientServer}>
-        <ListAll/>
-    </ApolloProvider>
+            <ListAll/>
+        </ApolloProvider>
       </ThemeProvider>
     </div>
   )

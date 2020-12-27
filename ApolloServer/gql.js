@@ -1,23 +1,24 @@
 const { gql } = require('apollo-server')
 const typeDefs = gql`
     type Name {
-        id:Int
+        id:String
         name:String
-        price:Int
+        price:String
     }
     type Names{
         names:[Name]
     }
     type Query {
         nameList:[Name]
+        name:Name
     }
     input NameInput {
-        id:Int,
+        id:String,
         name:String,
-        price:Int
+        price:String
     }
     type Mutation {
-        addName(id:Int,name:String,price:Int): Name,
+        addName(input:NameInput): Name,
         updateName(input:NameInput): Name,
         deleteName(input:NameInput): Name
       }

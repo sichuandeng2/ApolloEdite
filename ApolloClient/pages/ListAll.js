@@ -1,3 +1,4 @@
+import style from '../custom.module.css'
 import { useQuery, gql } from '@apollo/client'
 import TabelRender from './Table'
 import {Box, Text, Button, Modal, ModalOverlay, ModalContent, ModalHeader,ModalCloseButton,ModalBody,ModalFooter} from 'viviui'
@@ -17,7 +18,7 @@ function ListAll (){
       setOpen(false) 
     }
     const { loading, error, data } = useQuery(GQLListAll);
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <p className={style.body}>Loading...</p>;
     if (error) return <p>Error :(</p>;
 
     return (
