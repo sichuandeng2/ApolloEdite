@@ -13,16 +13,27 @@ function InsertName(){
  
     setTimeout(() => {
       // let v= JSON.stringify(values)
-      let v= values
-      console.log(v)
 
-      addName({variables:{id:values.id,name:values.name,price:values.price}})
+      // let v= values
+      // console.log(v)
+      // console.log(typeof values.id)
+      // console.log(typeof values.name)
+      // console.log(typeof values.price)
+      // addName(v)
+      addName({
+        variables:{
+          id:values.id,
+          name:values.name,
+          price:values.price
+        }
+      })
       actions.setSubmitting(false)
     }, 500);
   }
   return (
     <div>
-      <Formik initialValues={{id:'',name:"",price:''}} 
+      <Formik 
+      initialValues={{id:'',name:"",price:''}} 
       onSubmit ={(values,actions)=>submit(values,actions)}> 
         {
           props => (
@@ -37,7 +48,6 @@ function InsertName(){
             </Form>
           )
         }
-      
       </Formik>
 
       
